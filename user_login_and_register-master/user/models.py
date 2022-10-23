@@ -25,3 +25,5 @@ class Recipe(models.Model):
 
     # namee = models.CharField(max_length=20)
     # numberr = models.IntegerField()
+    def getidd(self):
+        return self.id

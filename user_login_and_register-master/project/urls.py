@@ -41,9 +41,13 @@ urlpatterns = [
     path('actionUrl/', user_view.actionUrl, name='actionUrl'),
     path('my_form/', user_view.my_form, name='my_form'),
     path('maindishes/', user_view.maindishes, name='maindishes'),
-    path('RecipePagee/', user_view.RecipePagee, name='RecipePagee'),
+    path('RecipePagee/<int:pk>', user_view.RecipePagee, name='RecipePagee'),
+    path('neww/', user_view.neww, name='neww'),
+    path('Starters/', user_view.Starters, name='Starters'),
+    path('Salads/', user_view.Salads, name='Salads'),
+    path('Desserts/', user_view.Desserts, name='Desserts'),
+    path('EmailSend/', user_view.EmailSend, name='EmailSend'),
 
 ]
 if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
-
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

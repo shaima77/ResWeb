@@ -97,7 +97,6 @@ tbody {
         <th>Time</th>
         <th>Difficulty</th>
         <th>Recipe Page</th>
-        <th>QR code</th>
 
       </tr>
     </thead>
@@ -107,7 +106,7 @@ tbody {
         <td>{{ obj.fullname }}</td>
         <td>{{ obj.Time }}</td>
         <td>{{ obj.Difficulty }}</td>
-              <form action="{% url 'RecipePagee' obj.id %}" method="post">
+              <form action="{% url 'RecipePagee' %}" method="post">
     {% csrf_token %}
 
             <input id="search" name="search" type="hidden" class="query-search"
