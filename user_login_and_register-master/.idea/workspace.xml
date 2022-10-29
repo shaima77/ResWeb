@@ -13,6 +13,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="package.json" />
         <option value="HTML File" />
       </list>
     </option>
@@ -33,18 +34,66 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/media/uploads" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\ah147\Desktop\user_login_and_register-master\user_login_and_register-master\media\uploads" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\ah147\Desktop\user_login_and_register-master\user_login_and_register-master\user\static\user" />
       <recent name="C:\Users\ah147\Desktop\user_login_and_register-master\user_login_and_register-master\user\templates\user" />
+      <recent name="C:\Users\ah147\Desktop\user_login_and_register-master\user_login_and_register-master\user\static\user" />
       <recent name="C:\Users\ah147\Desktop\user_login_and_register-master\user_login_and_register-master\user\static" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Django Server.user_login_and_register-master">
+    <configuration name="sli.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/user_login_and_register-master/user/templates/user/sli.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="manage" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="user_login_and_register-master" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/manage.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="views" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="user_login_and_register-master" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/user" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/user/views.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="user_login_and_register-master" type="Python.DjangoServer" factoryName="Django server">
       <module name="user_login_and_register-master" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -53,7 +102,7 @@
         <env name="PYTHONUNBUFFERED" value="1" />
         <env name="DJANGO_SETTINGS_MODULE" value="project.settings" />
       </envs>
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="C:\Users\ah147\Desktop\user_login_and_register-master\user_login_and_register-master\venv\Scripts\python.exe" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -69,6 +118,19 @@
       <option name="customRunCommand" value="" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Django Server.user_login_and_register-master" />
+      <item itemvalue="JavaScript Debug.sli.html" />
+      <item itemvalue="Python.manage" />
+      <item itemvalue="Python.views" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.manage" />
+        <item itemvalue="Python.views" />
+        <item itemvalue="JavaScript Debug.sli.html" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -112,10 +174,37 @@
       <workItem from="1666444171335" duration="1423000" />
       <workItem from="1666508106873" duration="1699000" />
       <workItem from="1666511282013" duration="859000" />
+      <workItem from="1666518177032" duration="359000" />
+      <workItem from="1666543702850" duration="1228000" />
+      <workItem from="1666547478519" duration="1065000" />
+      <workItem from="1666561041798" duration="1090000" />
+      <workItem from="1666682283310" duration="2000" />
+      <workItem from="1666684779305" duration="1516000" />
+      <workItem from="1666686328088" duration="2198000" />
+      <workItem from="1666704037361" duration="4135000" />
+      <workItem from="1666708731226" duration="1019000" />
+      <workItem from="1666784624982" duration="2026000" />
+      <workItem from="1666858208378" duration="2392000" />
+      <workItem from="1666876527221" duration="1735000" />
+      <workItem from="1666878471647" duration="659000" />
+      <workItem from="1666880074267" duration="776000" />
+      <workItem from="1666882820496" duration="2567000" />
+      <workItem from="1666885703844" duration="473000" />
+      <workItem from="1666950098812" duration="3257000" />
+      <workItem from="1666966329614" duration="2736000" />
+      <workItem from="1666974764288" duration="1735000" />
+      <workItem from="1667040153574" duration="3004000" />
+      <workItem from="1667044146026" duration="5388000" />
+      <workItem from="1667059149957" duration="1176000" />
+      <workItem from="1667067673005" duration="548000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/user_login_and_register_master$manage.coverage" NAME="manage Coverage Results" MODIFIED="1666686282708" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/user_login_and_register_master$views.coverage" NAME="views Coverage Results" MODIFIED="1666686276736" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/user" />
   </component>
 </project>

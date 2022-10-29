@@ -35,8 +35,8 @@ urlpatterns = [
     #####user related path##########################
     path('', include('user.urls')),
 
-    path('login/', user_view.Login, name='login'),
-    path('logout/', auth.LogoutView.as_view(template_name='user/index.html'), name='logout'),
+    path('Login/', user_view.Login, name='Login'),
+    path('logout/', auth.LogoutView.as_view(template_name='user/login.html'), name='logout'),
     path('register/', user_view.register, name='register'),
     path('actionUrl/', user_view.actionUrl, name='actionUrl'),
     path('my_form/', user_view.my_form, name='my_form'),
@@ -47,6 +47,11 @@ urlpatterns = [
     path('Salads/', user_view.Salads, name='Salads'),
     path('Desserts/', user_view.Desserts, name='Desserts'),
     path('EmailSend/', user_view.EmailSend, name='EmailSend'),
+    path('My_Recipe/', user_view.My_Recipe, name='My_Recipe'),
+    path('my_form_edit/<int:pk>', user_view.my_form_edit, name='my_form_edit'),
+    path('update/<int:pk>', user_view.update, name='update'),
+    path('delete/<int:pk>', user_view.delete, name='delete'),
+    path('NewIndex/', user_view.NewIndex, name='NewIndex'),
 
 ]
 if settings.DEBUG:

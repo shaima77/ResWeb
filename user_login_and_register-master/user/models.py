@@ -1,8 +1,10 @@
+from django.contrib.auth.models import User
 from django.db import models
 from jsonfield import JSONField
 
 
 class Recipe(models.Model):
+    author = models.CharField(max_length=24, unique=False, default='Main dishes')
     fullname = models.CharField(max_length=20)
     Time = models.IntegerField()
     choices = [
@@ -16,14 +18,28 @@ class Recipe(models.Model):
         ('Main dishes', "Main dishes"),
         ('Desserts', "Desserts"),
     ]
-    Difficulty = models.CharField(max_length=24, choices=choices, default='Easy')
+    Difficulty = models.CharField(max_length=24, choices=choices, default='Easy', unique=False)
     categoriesss = models.CharField(max_length=24, choices=categories, default='Main dishes')
 
     ResText = models.TextField()
     Ingredients = models.TextField()
-    upload = models.ImageField(upload_to='media/uploads', null=True, blank=True)
+    upload = models.ImageField(upload_to='media/uploads', null=False, blank=False)
 
-    # namee = models.CharField(max_length=20)
-    # numberr = models.IntegerField()
-    def getidd(self):
-        return self.id
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class Review(models.Model):
+    name = models.CharField(max_length=24, unique=False, default='Name')
+    date = models.DateTimeField()
+    Text = models.TextField()

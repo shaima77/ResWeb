@@ -2,7 +2,7 @@ from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 
-from user.models import Recipe
+from user.models import Recipe, Review
 
 
 class UserRegisterForm(UserCreationForm):
@@ -20,6 +20,14 @@ class MyForm(forms.ModelForm):
     class Meta:
         model = Recipe
 
-        fields = ["fullname", "Time", "Difficulty","categoriesss", "ResText", "Ingredients","upload"]
+        fields = ["fullname", "Time", "Difficulty","categoriesss", "ResText", "Ingredients","upload","author"]
         labels = {'fullname': "Name", "Time": "Time to Cook", "Difficulty": "Difficulty", "ResText": "Instructions"
-            , "Ingredients": "Ingredients","categoriesss":"Categories","upload":"upload"}
+            , "Ingredients": "Ingredients","categoriesss":"Categories","upload":"upload","author":"author"}
+
+
+class MyForm2(forms.ModelForm):
+    class Meta:
+        model = Review
+
+        fields = ["name", "date", "Text"]
+        labels = {'name': "name", "date": "date", "Text": "Text"}

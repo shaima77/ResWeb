@@ -12,11 +12,11 @@
     <div class="container">
                 <input type="hidden" name="csrfmiddlewaretoken" value="adgcFwLVwoqF5RMW4kvy13OH9UFEUH0s0pv9KLvF6kpAB0JQH3KOB2i5PuhZX3jI">
 
-            <form method="POST" enctype="multipart/form-data">
+                {% for obj in x %}
+                    <form action="{% url 'update' obj.id %}" method="post">
             <input type="hidden" name="csrfmiddlewaretoken" value="adgcFwLVwoqF5RMW4kvy13OH9UFEUH0s0pv9KLvF6kpAB0JQH3KOB2i5PuhZX3jI">
-
-        <p><label for="id_fullname">Name:</label> <input type="text" name="fullname" maxlength="20" required id="id_fullname"></p>
-<p><label for="id_Time">Time to Cook:</label> <input type="number" name="Time" required id="id_Time"></p>
+        <p><label for="id_fullname">Name:</label> <input type="text" name="fullname" maxlength="20" required id="id_fullname" value={{ obj.fullname }}></p>
+<p><label for="id_Time">Time to Cook:</label> <input type="number" name="Time" required id="id_Time" value={{ obj.Time }}></p>
 <p><label for="id_Difficulty">Difficulty:</label> <select name="Difficulty" id="id_Difficulty">
   <option value="Easy" selected>Easy</option>
 
@@ -35,14 +35,15 @@
   <option value="Desserts">Desserts</option>
 
 </select></p>
-<p><label for="id_ResText">Instructions:</label> <textarea name="ResText" cols="40" rows="10" required id="id_ResText">
+<p><label for="id_ResText">Instructions:</label> <textarea name="ResText" cols="40" rows="10" required id="id_ResText">{{ obj.ResText }}
 </textarea></p>
-<p><label for="id_Ingredients">Ingredients:</label> <textarea name="Ingredients" cols="40" rows="10" required id="id_Ingredients">
+<p><label for="id_Ingredients">Ingredients:</label> <textarea name="Ingredients" cols="40" rows="10" required id="id_Ingredients">{{ obj.Ingredients }}
 </textarea></p>
 <p><label for="id_upload">upload:</label> <input type="file" name="upload" accept="image/*" required id="id_upload"></p>
 <p><input type="hidden" name="author" value=    {{ user.username }} maxlength="24" required id="id_author"></p>
          <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+                        </form>
+                {% endfor %}
 
     </div>
 </body>
