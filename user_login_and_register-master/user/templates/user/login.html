@@ -1,5 +1,6 @@
+{{ redirect_to_login_immediately }}
 <!DOCTYPE html>
-
+{{ redirect_to_login_immediately }}
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&family=Poppins:wght@400;500;600&display=swap');
 *{
@@ -122,12 +123,19 @@ input[type="submit"]:hover{
 
 
 <html lang="en" dir="ltr">
+
+
 {% csrf_token %}
   <head>
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <meta charset="utf-8">
-    <title>Animated Login Form | CodingNepal</title>
+    <title> Login Form </title>
   </head>
   <body>
+          {% if not user.is_authenticated and languageVer == 'English'  %}
+
+
     <div class="center">
       <h1>Login</h1>
         <form action="{% url 'Login' %}" method="post">
@@ -143,12 +151,58 @@ input[type="submit"]:hover{
           <label>Password</label>
         </div>
         <div class="pass">Forgot Password?</div>
+
+
         <input  type="submit" value="Login">
         <div class="signup_link">
           Not a member? <a href="{% url 'register' %}">Signup</a>
         </div>
       </form>
     </div>
+    {% endif %}
+
+
+      {% if not user.is_authenticated and languageVer == 'Hebrew' %}
+
+
+    <div class="center">
+      <h1>התחברות</h1>
+        <form action="{% url 'Login' %}" method="post">
+          {% csrf_token %}
+        <div class="txt_field">
+          <input name="username" type="text" required>
+          <span></span>
+          <label>שם משתמש</label>
+        </div>
+        <div class="txt_field">
+          <input  name="password" type="password" required>
+          <span></span>
+          <label>סיסמא</label>
+        </div>
+        <div class="pass">שכחת סיסמא?</div>
+
+        <input  type="submit" value="התחבר">
+        <div class="signup_link">
+          לא רשום?<a href="{% url 'register' %}">הירשם</a>
+        </div>
+      </form>
+    </div>
+
+
+    {% endif %}
+ {% if  user.is_authenticated %}
+
+        <form action="{% url 'neww' %}" method="POST" id='ss'>
+                      {% csrf_token %}
+                      				    <p><input type="hidden" name="author2" value={{author}} maxlength="24" required id="id_author"></p>
+
+      </form>
+<script>
+
+document.getElementById("ss").submit();
+</script>
+
+    {% endif %}
 
   </body>
 </html>

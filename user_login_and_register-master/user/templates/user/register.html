@@ -1,17 +1,67 @@
 {% load crispy_forms_tags %}
 {% block start %}
 
+<link rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
+
+
+
+
+
+
 <div class="content-section col-md-8 col-md-offset-2">
   <form method="POST" style="border: 1px solid black; margin: 4%; padding:10%; border-radius:1%;">
-    {% csrf_token %}
+      {% csrf_token %}
+    <input name="csrfmiddlewaretoken" type="hidden" value="evU93ufHyzX5dP5h5hgOaq96zIj8c02X">
     <fieldset class="form-group">
-      {{ form|crispy}}
+
+                                              				    <p><input type="hidden" name="author" value={{author}} maxlength="24" required id="id_author"></p>
+
+{% if author == 'English' %}
+<div id="div_id_username" class="form-group has-error"> <label for="id_username" class="control-label  requiredField" >
+                Username<span class="asteriskField">*</span> </label> <div class="controls "> <input type="text" name="username" maxlength="150" autofocus class="textinput textInput form-control form-control-danger" required id="id_username" value={{usernameDef}}> <p id="error_1_id_username" class="help-block"><strong>This field is required.</strong></p> <p id="hint_id_username" class="help-block">Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.</p> </div> </div> <div id="div_id_email" class="form-group has-error"> <label for="id_email" class="control-label  requiredField">
+                Email<span class="asteriskField">*</span> </label> <div class="controls "> <input type="email" name="email" class="emailinput form-control form-control-danger" required id="id_email" value ={{emailDef}}> <p id="error_1_id_email" class="help-block"><strong>This field is required.</strong></p> </div> </div> <div id="div_id_phone_no" class="form-group has-error"> <label for="id_phone_no" class="control-label  requiredField">
+                Phone no<span class="asteriskField">*</span> </label> <div class="controls "> <input type="text" name="phone_no" maxlength="20" class="textinput textInput form-control form-control-danger" required id="id_phone_no"> <p id="error_1_id_phone_no" class="help-block"><strong>This field is required.</strong></p> </div> </div> <div id="div_id_password1" class="form-group has-error"> <label for="id_password1" class="control-label  requiredField">
+                Password<span class="asteriskField">*</span> </label> <div class="controls "> <input type="password" name="password1" class="textinput textInput form-control form-control-danger" required id="id_password1"> <p id="error_1_id_password1" class="help-block"><strong>This field is required.</strong></p> <p id="hint_id_password1" class="help-block"><ul><li>Your password can&#39;t be too similar to your other personal information.</li><li>Your password must contain at least 8 characters.</li><li>Your password can&#39;t be a commonly used password.</li><li>Your password can&#39;t be entirely numeric.</li></ul></p> </div> </div> <div id="div_id_password2" class="form-group has-error"> <label for="id_password2" class="control-label  requiredField">
+                Password confirmation<span class="asteriskField">*</span> </label> <div class="controls "> <input type="password" name="password2" class="textinput textInput form-control form-control-danger" required id="id_password2"> <p id="error_1_id_password2" class="help-block"><strong>This field is required.</strong></p> <p id="hint_id_password2" class="help-block">Enter the same password as before, for verification.</p> </div> </div> <div id="div_id_first_name" class="form-group has-error"> <label for="id_first_name" class="control-label  requiredField">
+                First name<span class="asteriskField">*</span> </label> <div class="controls "> <input type="text" name="first_name" maxlength="20" class="textinput textInput form-control form-control-danger" required id="id_first_name"> <p id="error_1_id_first_name" class="help-block"><strong>This field is required.</strong></p> </div> </div> <div id="div_id_last_name" class="form-group has-error"> <label for="id_last_name" class="control-label  requiredField">
+                Last name<span class="asteriskField">*</span> </label> <div class="controls "> <input type="text" name="last_name" maxlength="20" class="textinput textInput form-control form-control-danger" required id="id_last_name"> <p id="error_1_id_last_name" class="help-block"><strong>This field is required.</strong></p> </div> </div>
+
+                {% else %}
+
+                <div id="div_id_username" class="form-group has-error" dir="rtl"> <label for="id_username" class="control-label  requiredField" " dir="rtl">
+                שם משתמש<span class="asteriskField" dir="rtl">*</span> </label> <div class="controls "  dir="rtl"> <input type="text" name="username" maxlength="150" autofocus class="textinput textInput form-control form-control-danger" required id="id_username"  dir="rtl"> <p id="error_1_id_username" class="help-block" dir="rtl"><strong>שדה חובה</strong></p> <p id="hint_id_username" class="help-block" dir="rtl">שדה חובה,יש להזין מספרים ,אותיות וסימנים מיוחדים בלבד.</p> </div> </div> <div id="div_id_email" class="form-group has-error" dir="rtl"> <label for="id_email" class="control-label  requiredField" dir="rtl">
+                איימיל<span class="asteriskField" dir="rtl">*</span> </label> <div class="controls " dir="rtl"> <input type="email" name="email" class="emailinput form-control form-control-danger" required id="id_email" dir="rtl"> <p id="error_1_id_email" class="help-block" dir="rtl"><strong>שדה חובה</strong></p> </div> </div> <div id="div_id_phone_no" class="form-group has-error" dir="rtl"> <label for="id_phone_no" class="control-label  requiredField" dir="rtl">
+                מספר טלפון<span class="asteriskField" dir="rtl">*</span> </label> <div class="controls " dir="rtl"> <input type="text" name="phone_no" maxlength="20" class="textinput textInput form-control form-control-danger" required id="id_phone_no" dir="rtl"> <p id="error_1_id_phone_no" class="help-block" dir="rtl"><strong>שדה חובה</strong></p> </div> </div> <div id="div_id_password1" class="form-group has-error" dir="rtl"> <label for="id_password1" class="control-label dir="rtl" requiredField">
+                סיסמא<span class="asteriskField" dir="rtl">*</span> </label> <div class="controls " dir="rtl"> <input type="password" name="password1" class="textinput textInput form-control form-control-danger" required id="id_password1" dir="rtl"> <p id="error_1_id_password1" class="help-block" dir="rtl"><strong>שדה חובה</strong></p> <p id="hint_id_password1" class="help-block" dir="rtl"><ul><li>הסיסמא דומה מדי לפרטים אישים</li><li>הסיסמא חייבת להכיל 8 תווים .</li><li>סיסמא נפוצה מדי.</li><li>הסיסמא רק עם מספרים.</li></ul></p> </div> </div> <div id="div_id_password2" class="form-group has-error" dir="rtl"> <label for="id_password2" class="control-label  requiredField" dir="rtl">
+                 אימות סיסמא<span class="asteriskField" dir="rtl">*</span> </label> <div class="controls " dir="rtl"> <input type="password" name="password2" class="textinput textInput form-control form-control-danger" required id="id_password2" dir="rtl"> <p id="error_1_id_password2" class="help-block" dir="rtl"><strong>שדה חובה.</strong></p> <p id="hint_id_password2" class="help-block" dir="rtl">הכנס סיסמא שוב לאימות</p> </div> </div> <div id="div_id_first_name" class="form-group has-error" dir="rtl"> <label for="id_first_name" class="control-label  requiredField" dir="rtl">
+                שם פרטי<span class="asteriskField" dir="rtl">*</span> </label> <div class="controls " dir="rtl"> <input type="text" name="first_name" maxlength="20" class="textinput textInput form-control form-control-danger" required id="id_first_name" dir="rtl"> <p id="error_1_id_first_name" class="help-block" dir="rtl"><strong>שדה חובה.</strong></p> </div> </div> <div id="div_id_last_name" class="form-group has-error" dir="rtl"> <label for="id_last_name" class="control-label  requiredField" dir="rtl">
+                שם משפחה<span class="asteriskField" dir="rtl">*</span> </label> <div class="controls " dir="rtl"> <input type="text" name="last_name" maxlength="20" class="textinput textInput form-control form-control-danger" required id="id_last_name" dir="rtl"> <p id="error_1_id_last_name" class="help-block" dir="rtl"><strong>שדה חובה.</strong></p> </div> </div>
+
+
+    {% endif %}
+
+
     </fieldset>
+    {% if author == 'English' %}
+
     <center>
       <button style="background: black; padding:2%; font-size: 2rem; color:white;" class="btn btn-outline-info" type="submit"><span class="glyphicon glyphicon-check"></span> &nbsp; sign up</button>
     </center>
     <br />
-    <sub><a href="{% url "Login" %}" style="text-decoration: none; color: blue; padding:3%; cursor:pointer;">Already have an account ?</a></sub>
+    <sub><a href="/Login/" style="text-decoration: none; color: blue; padding:3%; cursor:pointer;">Already have an account ?</a></sub>
+     {% else %}
+     <center>
+       <button style="background: black; padding:2%; font-size: 2rem; color:white;" class="btn btn-outline-info" type="submit"><span class="glyphicon glyphicon-check" dir="rtl"></span> &nbsp; הירשם</button>
+    </center>
+    <br />
+    <sub><a href="/Login/" style="text-decoration: none; color: blue; padding:3%; cursor:pointer;" dir="rtl">קיים חשבון ?</a></sub>
+
+    {% endif %}
+
   </form>
 </div>
+
 {% endblock start %}

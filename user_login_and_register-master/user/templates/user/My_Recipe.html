@@ -93,13 +93,23 @@ tbody {
   <table>
     <thead>
       <tr>
-        <th>Name</th>
-        <th>Time</th>
-        <th>Difficulty</th>
-        <th>Edit</th>
-         <th>Delete</th>
+          {% if languageVer == 'English' %}
+                <th>Name</th>
+                <th>Time</th>
+                <th>Difficulty</th>
+                <th>Edit</th>
+                <th>Delete</th>
+                <th></th>
+        {% else %}
+        <th>שם</th>
+        <th>זמן</th>
+        <th>קושי</th>
+        <th>עריכה</th>
+         <th>מחיקה</th>
          <th></th>
 
+
+        {% endif %}
       </tr>
     </thead>
     <tbody>
@@ -134,11 +144,26 @@ tbody {
     </tbody>
   </table>
     </form>
+              {% if languageVer == 'English' %}
+
      <form method="GET" action="/neww">
         <button class="btn-bgstroke">
                     Exit
                 </button>
              </form>
+
+
+             {% else %}
+             <form method="GET" action="/neww">
+        <button class="btn-bgstroke">
+                    יציאה
+                </button>
+             </form>
+
+
+             {% endif %}
+
+
     </tbody>
 </div>
 

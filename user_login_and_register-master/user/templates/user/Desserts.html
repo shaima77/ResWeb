@@ -60,6 +60,8 @@ position: fixed;
 
 }
 html,
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 body {
   height: 100%;
 }
@@ -133,13 +135,27 @@ tbody {
   <table>
     <thead>
       <tr>
+           {% if languageVer == 'English' %}
           <th>index</th>
         <th>Name</th>
         <th>Time</th>
         <th>Difficulty</th>
         <th>Recipe Page</th>
         <th>QR code</th>
+
         <th></th>
+        {% else %}
+          <th>מספר מתכון</th>
+        <th>שם</th>
+        <th>זמן הכנה</th>
+        <th>קושי</th>
+        <th>דף מתכון</th>
+        <th>קוד QR</th>
+
+        <th></th>
+
+        {% endif %}
+
 
       </tr>
     </thead>

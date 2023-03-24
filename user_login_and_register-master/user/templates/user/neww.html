@@ -1,14 +1,13 @@
+
 <!DOCTYPE html>
 <html>
 <head>
 <title>Shai Web</title>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <style>
     /* Google Fonts - Poppins */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
-
 
 
 
@@ -30,16 +29,19 @@ h1, h2, h3, h4, h5, h6 {
 </style>
 </head>
 <body>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     {% if user.is_authenticated  %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% if languageVer == 'English'  %}
 
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
   <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
     <a href="/neww" class="w3-bar-item w3-button">Shai Web</a>
+
     <!-- Right-sided navbar links. Hide them on small screens -->
     <div class="w3-right w3-hide-small">
-       <a href="/neww" class="w3-bar-item w3-button">Home</a>
 
      <a href="/Starters" class="w3-bar-item w3-button">Starters</a>
 
@@ -50,9 +52,33 @@ h1, h2, h3, h4, h5, h6 {
       <a href="/My_Recipe " class="w3-bar-item w3-button">My Recipes</a>
       <a href="{% url "logout" %}" class="w3-bar-item w3-button">Logout</a>
 
+
     </div>
   </div>
 </div>
+
+    {% else %}
+    <div class="w3-top">
+  <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+    <a href="/neww" class="w3-bar-item w3-button">אתר המתכונים</a>
+    <!-- Right-sided navbar links. Hide them on small screens -->
+       <a href="/neww" class="w3-bar-item w3-button">בית</a>
+
+
+     <a href="/Starters" class="w3-bar-item w3-button">פתיחה</a>
+
+       <a href="/Salads" class="w3-bar-item w3-button">סלטים</a>
+      <a href="/maindishes" class="w3-bar-item w3-button">עקריות</a>
+      <a href="/Desserts" class="w3-bar-item w3-button">קינוחים</a>
+      <a href="/my_form" class="w3-bar-item w3-button">הוספת מתכון</a>
+      <a href="/My_Recipe " class="w3-bar-item w3-button">המתכונים שלי</a>
+      <a href="{% url "logout" %}" class="w3-bar-item w3-button">התנתקות</a>
+
+
+
+  </div>
+</div>
+    {% endif %}
 
 {% endif %}
 
@@ -66,10 +92,26 @@ h1, h2, h3, h4, h5, h6 {
     </div>
 
     <div class="w3-col m6 w3-padding-large">
+            {% if languageVer == 'English'  %}
+
       <h1 class="w3-center">About Our Website</h1><br>
       <h5 class="w3-center">since 2022</h5>
       <p class="w3-large">Our website is intended for the purpose of encouraging cooking in the family and sharing recipes among the family, thank you for your cooperation, Happy new year to everyone. <span class="w3-tag w3-light-grey"></span> </p>
       <p class="w3-large w3-text-grey w3-hide-medium">If there are suggestions for improvement/problems, you can contact us via the contact page located at the bottom of the current page.
+          {% else %}
+
+
+          <h1 class="w3-center" dir="rtl">מידע לגבי האתר </h1><br>
+      <h5 class="w3-center" dir="rtl">מאז 2022</h5>
+      <p class="w3-large" dir="rtl">האתר שלנו נועד למטרת עידוד בישול במשפחה ושיתוף מתכונים בין המשפחה, תודה על שיתוף הפעולה, שנה טובה לכולם. <span class="w3-tag w3-light-grey"></span> </p>
+      <p class="w3-large w3-text-grey w3-hide-medium" dir="rtl">במידה וישנן הצעות לשיפור/בעיות, ניתן לפנות אלינו דרך עמוד צור קשר הנמצא בתחתית העמוד הנוכחי.
+
+
+
+
+          {% endif %}
+
+
 </p>
     </div>
   </div>
@@ -77,8 +119,14 @@ h1, h2, h3, h4, h5, h6 {
   <hr>
 
   <!-- Menu Section -->
+            {% if languageVer == 'English'  %}
 
-      <h1 class="w3-center">Our Menu</h1><br>
+      <h1 class="w3-center" >Our Menu</h1><br>
+                {% else %}
+      <h1 class="w3-center" dir="rtl">התפריט שלנו בתמונות</h1><br>
+
+          {% endif %}
+
 <html>
 
 <head>
@@ -258,20 +306,37 @@ h1, h2, h3, h4, h5, h6 {
 
 
   <hr>
+            {% if languageVer == 'English'  %}
 
   <!-- Contact Section -->
   <div class="w3-container w3-padding-64" id="contact">
     <h1>Contact</h1><br>
     <p>If you want to get in touch, you can do it in a variety of ways. I would love to hear from you, thank you ,Do not hesitate to contact us.</p>
     <p>You can also contact us by phone 0524810702 or email ah14701@hotmail.com, or you can send us a message here:</p>
-            <form method="POST" enctype="multipart/form-data">
+            <form action="{% url 'EmailSend' %}" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="Name"></p>
-      <p><input class="w3-input w3-padding-16" type="datetime-local" placeholder="Date and time" required name="date" value="2020-11-16T20:00"></p>
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Message \ Special requirements" required name="Message"></p>
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="name" name="name"></p>
+      <p><input class="w3-input w3-padding-16" type="datetime-local" placeholder="Date and time" required name="date" value="2020-11-16T20:00" name="date"></p>
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Message \ Special requirements" required name="Text" name="Text"></p>
       <p><button class="w3-button w3-light-grey w3-section" type="submit">SEND MESSAGE</button></p>
     </form>
   </div>
+  {% else %}
+  <div class="w3-container w3-padding-64" id="contact">
+    <h1 dir="rtl">דף קשר</h1><br>
+    <p dir="rtl">אם תרצו ליצור קשר, תוכלו לעשות זאת במגוון דרכים. אשמח לשמוע ממך, תודה, אל תהסס לפנות אלינו.</p>
+    <p dir="rtl">ניתן ליצור איתנו קשר גם בטלפון 0524810702 או במייל ah14701@hotmail.com, או לשלוח לנו הודעה כאן:</p>
+          <form action="{% url 'EmailSend' %}" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="שם" required name="name" name="name"></p>
+      <p><input class="w3-input w3-padding-16" type="datetime-local" placeholder="תאריך וזמן" required name="date" value="2020-11-16T20:00" name="date"></p>
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="הודעה/בקשות מיוחדיות" required name="Text" name="Text"></p>
+      <p><button class="w3-button w3-light-grey w3-section" type="submit">שלח הודעה</button></p>
+    </form>
+  </div>
+
+
+          {% endif %}
 
 <!-- End page content -->
 </div>

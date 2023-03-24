@@ -9,7 +9,7 @@ class Recipe(models.Model):
     Time = models.IntegerField()
     choices = [
         ('Easy', 'Easy'),
-        ('Noraml', "Normal"),
+        ('Normal', "Normal"),
         ('Hard', "Hard")
     ]
     categories = [
@@ -41,5 +41,5 @@ class Recipe(models.Model):
 
 class Review(models.Model):
     name = models.CharField(max_length=24, unique=False, default='Name')
-    date = models.DateTimeField()
+    date = models.CharField(max_length=24)
     Text = models.TextField()

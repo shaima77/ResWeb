@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>W3.CSS Template</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -33,8 +32,30 @@ h1, h2, h3, h4, h5, h6 {
 
 <!-- Page content -->
 <div class="w3-content" style="max-width:1100px">
-
+{% if language ==  'en' %}
   <!-- About Section -->
+  <div class="w3-row w3-padding-64" id="about">
+    <div class="w3-col m6 w3-padding-large w3-hide-small">
+     <img src="{{ obj.upload.url }} " alt="Table Setting" width="450" height="600" >
+    </div>
+
+    <div class="w3-col m6 w3-padding-large">
+      <h1 class="w3-center">{{obj.fullname }}</h1><br>
+      <h5 class="w3-center">Difficulty:{{obj.Difficulty }} </h5>
+      <p <span class="w3-tag w3-light-grey"></span> Ingredients</p>
+      {% for word in t %}
+        <p class="w3-large w3-text-grey w3-hide-medium"  id= {{ forloop.counter }} ><input type="checkbox" id= {{ forloop.counter }} name="vehicle1" onclick="toggleLineThrough(this)" >{{ word }} </p>
+
+      {% endfor %}
+        <p <span class="w3-tag w3-light-grey"></span> Instructions</p>
+       {% for word2 in t2 %}
+      <p class="w3-large w3-text-grey w3-hide-medium" id={{ forloop.counter }}+"#"><input type="checkbox" id={{ forloop.counter }}+"#" name="vehicle1" onclick="toggleLineThrough(this)" >{{ forloop.counter }}.{{ word2 }} </p>
+      {% endfor %}
+    </div>
+  </div>
+
+{% else %}
+ <!-- About Section -->
   <div class="w3-row w3-padding-64" id="about">
     <div class="w3-col m6 w3-padding-large w3-hide-small">
      <img src="{{ obj.upload.url }} " class="w3-round w3-image w3-opacity-min" alt="Table Setting" width="600" height="750">
@@ -42,12 +63,23 @@ h1, h2, h3, h4, h5, h6 {
 
     <div class="w3-col m6 w3-padding-large">
       <h1 class="w3-center">{{obj.fullname }}</h1><br>
-      <h5 class="w3-center">Difficulty:{{obj.Difficulty }} </h5>
-      <p class="w3-large">   {{ obj.Ingredients }} </p>
-      <p <span class="w3-tag w3-light-grey">seasonal</span> ingredients.</p>
-      <p class="w3-large w3-text-grey w3-hide-medium"> {{ obj.ResText }} </p>
+      <h5 class="w3-center">{{obj.Difficulty }} :קושי</h5>
+      <p <span class="w3-tag w3-light-grey"></span> מצרכים</p>
+      {% for word in t %}
+        <p class="w3-large w3-text-grey w3-hide-medium" dir="rtl" id= {{ forloop.counter }}><input type="checkbox" dir="rtl"  id={{ forloop.counter }}  onclick="toggleLineThrough(this)" >{{ word }} </p>
+
+      {% endfor %}
+        <p <span class="w3-tag w3-light-grey"></span> הנחיות הכנה</p>
+       {% for word2 in t2 %}
+      <p class="w3-large w3-text-grey w3-hide-medium" dir="rtl" id={{ forloop.counter }}+"#"><input type="checkbox" dir="rtl" id={{ forloop.counter }}+"#"  onclick="toggleLineThrough(this)" >{{ forloop.counter }}.{{ word2 }} </p>
+
+      {% endfor %}
     </div>
   </div>
+
+
+
+{% endif %}
 
 
 {% endfor %}
@@ -64,4 +96,34 @@ h1, h2, h3, h4, h5, h6 {
 </footer>
 
 </body>
+
+
+        <script>
+
+        function toggleLineThrough(element) {
+
+  if (element.checked)
+  {
+
+                        document.getElementById(element.id).style.textDecoration = "line-through";
+
+
+
+
+ }
+  if (!element.checked)
+  {
+
+                        document.getElementById(element.id).style.textDecoration = "none";
+ }
+
+
+
+
+}
+
+</script>
+
+
+
 </html>

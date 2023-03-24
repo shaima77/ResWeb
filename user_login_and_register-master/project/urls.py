@@ -52,6 +52,8 @@ urlpatterns = [
     path('update/<int:pk>', user_view.update, name='update'),
     path('delete/<int:pk>', user_view.delete, name='delete'),
     path('NewIndex/', user_view.NewIndex, name='NewIndex'),
+    path('NewIndex2/', user_view.NewIndex2, name='NewIndex2'),
+
 
 ]
 if settings.DEBUG:

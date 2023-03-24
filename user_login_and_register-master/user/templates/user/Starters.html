@@ -133,13 +133,26 @@ tbody {
   <table>
     <thead>
       <tr>
+          {% if languageVer == 'English' %}
           <th>index</th>
         <th>Name</th>
         <th>Time</th>
         <th>Difficulty</th>
         <th>Recipe Page</th>
         <th>QR code</th>
+
         <th></th>
+        {% else %}
+          <th>מספר מתכון</th>
+        <th>שם</th>
+        <th>זמן הכנה</th>
+        <th>קושי</th>
+        <th>דף מתכון</th>
+        <th>קוד QR</th>
+
+        <th></th>
+
+        {% endif %}
 
       </tr>
     </thead>
@@ -150,6 +163,7 @@ tbody {
         <td>{{ obj.fullname }}</td>
         <td>{{ obj.Time }}</td>
         <td>{{ obj.Difficulty }}</td>
+
               <form action="{% url 'RecipePagee' obj.id %}" method="post">
     {% csrf_token %}
 
@@ -181,11 +195,22 @@ tbody {
     </tbody>
   </table>
     </form>
-     <form method="GET" action="/neww">
+
+     {% if languageVer == 'English' %}
+        <form method="GET" action="/neww">
         <button class="btn-bgstroke">
                     Exit
                 </button>
              </form>
+        {% else %}
+         <form method="GET" action="/neww">
+        <button class="btn-bgstroke">
+                    יציאה
+                </button>
+             </form>
+        {% endif %}
+
+
     </tbody>
 </div>
 
